@@ -19,7 +19,7 @@ Before starting, ensure you have the following installed:
 - [Poetry](https://python-poetry.org/docs/) for managing dependencies
 - Python 3.7+ with virtualenv
 
-## 1. Clone the repository
+## Clone the repository
 ```
 git clone git@github.com:abhifetch/solana-agent.git
 cd solana-agent

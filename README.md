@@ -138,3 +138,44 @@ INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
 INFO:     [EscrowAgent]: Notifying winner and loser.
 INFO:     [EscrowAgent]: Resetting bids count and clearing stored bid details.
 ```
+
+### Output at sample agent
+
+```
+(venv) abhimanyugangani@Abhimanyus-MacBook-Pro solana_uagents % python3 agents/player_agent.py
+INFO:     [PlayerAgent]: Registration on Almanac API successful
+INFO:     [PlayerAgent]: Almanac contract registration is up to date!
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+balance_resp :GetBalanceResp { context: RpcResponseContext { slot: 328266494, api_version: Some("2.0.8") }, value: 4819985000 }
+INFO:     [PlayerAgent]: GnmWZeouyoqqae5HUTcCMJpgfoYG9J1umtdG391ZEBg5
+INFO:     [PlayerAgent]: Initial agent balance: 4.819985 SOL
+What is the amount of SOL you want to deposit? 0.5
+What is the price of Bitcoin you want to bid at? 65000
+INFO:     [PlayerAgent]: Placing bet of 0.5 SOL on Bitcoin at 65000.0$ with wallet address: GnmWZeouyoqqae5HUTcCMJpgfoYG9J1umtdG391ZEBg5
+INFO:     [PlayerAgent]: Transferring 0.5 SOL to 8WMWFo13At1REkwy5t7ck6sLgCUrJ9dn66mbaccPiJ26
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:solanaweb3.rpc.httprpc.HTTPClient:Transaction sent to https://api.devnet.solana.com. Signature 4VGbzh1N6QX3DnfLXXhcbiU78FR4v3aLphEQqbxjBaqEthsoABMDeKFdTPKEwPzsY2muC7jRNziZJKX7e2wAfhsD: 
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+INFO:     [PlayerAgent]: Transfer result: SendTransactionResp(Signature(4VGbzh1N6QX3DnfLXXhcbiU78FR4v3aLphEQqbxjBaqEthsoABMDeKFdTPKEwPzsY2muC7jRNziZJKX7e2wAfhsD))
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+balance_resp :GetBalanceResp { context: RpcResponseContext { slot: 328266551, api_version: Some("2.0.8") }, value: 4319980000 }
+INFO:     [PlayerAgent]: Final agent balance: 4.31998 SOL
+INFO:     [PlayerAgent]: Starting server on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:httpx:HTTP Request: POST https://api.devnet.solana.com "HTTP/1.1 200 OK"
+balance_resp :GetBalanceResp { context: RpcResponseContext { slot: 328266695, api_version: Some("2.0.8") }, value: 5219980000 }
+INFO:     [PlayerAgent]: You Won. Updated account balance: 5.21998 SOL
+```

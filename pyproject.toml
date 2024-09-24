@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "solana-uagents"
+version = "0.1.0"
+description = "Integration of Solana wallet into Fetch.ai uAgents framework."
+authors = ["abhifetch <abhi.gangani@fetch.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+uagents = "^0.1.0"
+solders = "^0.6.0"
+solana = "^0.25.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

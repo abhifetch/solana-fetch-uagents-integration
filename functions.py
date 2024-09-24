@@ -1,3 +1,4 @@
+import base58
 from solders.keypair import Keypair
 from solders.pubkey import Pubkey
 from solders.transaction import Transaction
@@ -5,6 +6,32 @@ from solders.system_program import TransferParams, transfer
 from solana.rpc.api import Client
 from solana.rpc.types import TxOpts
 import requests
+
+def get_keypair_details(secret_key_list):
+    """
+    Given a list of secret key bytes (integers), returns a dictionary with the keypair, public key,
+    private key in bytes, and private key in Base58 encoding.
+    """
+
+    # Convert the list of integers into a bytes object (private key)
+    secret_key_bytes = bytes(secret_key_list)
+
+    # Restore the Keypair using the secret key
+    keypair = Keypair.from_bytes(secret_key_bytes)
+
+    # Public key (from keypair)
+    public_key = keypair.pubkey()
+
+    # Private key in Base58 encoding (for readability)
+    private_key_base58 = base58.b58encode(secret_key_bytes).decode()
+
+    # Return all necessary details in a dictionary
+    return {
+        "keypair": keypair,
+        "public_key": public_key,  # Solders Pubkey object
+        "private_key_bytes": secret_key_bytes,  # Private key in bytes
+        "private_key_base58": private_key_base58  # Private key in Base58
+    }
 
 client = Client("https://api.devnet.solana.com")
 
